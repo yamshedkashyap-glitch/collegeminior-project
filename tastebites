@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TasteBite Restaurant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+    body {
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80") no-repeat center/cover;
+      color: white;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background: #ff5722;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffe0b2;
+    }
+
+    #menu {
+      background: url("https://images.unsplash.com/photo-1600891964095-4316e1a1a122?auto=format&fit=crop&w=1500&q=80") no-repeat center/cover;
+      padding: 60px 20px;
+      color: white;
+      position: relative;
+    }
+    #menu::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+    #menu h2, #menu .menu-grid {
+      position: relative;
+      z-index: 2;
+    }
+    #menu h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .menu-item {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      padding: 15px 15px 5px;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    .menu-item p {
+      padding: 0 15px 15px;
+      font-weight: bold;
+      color: #ff5722;
+    }
+
+    #booking {
+      padding: 60px 20px;
+      background: #fff3e0;
+      text-align: center;
+    }
+    #booking h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #e64a19;
+    }
+    form {
+      background: white;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+    form input, form select, form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form button {
+      background: #ff5722;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #e64a19;
+    }
+    .success-message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+
+    #contact {
+      padding: 60px 20px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    #contact h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    #contact p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #de4646;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TasteBite Restaurant</h1>
+    <p>Your favorite place for tasty food & fine dining 🍴</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#booking">Book Table</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src= images.jpg alt="Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>₹350</p>
+      </div>
+      <div class="menu-item">
+        <img src=istockphoto-117150229-612x612.jpg alt="Burger">
+        <h3>Cheese Burger</h3>
+        <p>₹250</p>
+      </div>
+      <div class="menu-item">
+        <img src=Cacio-e-Pepe_EXPS_TOHcom23_273412_P2_MD_04_26_5b.jpg alt="Pasta">
+        <h3>Italian Pasta</h3>
+        <p>₹300</p>
+      </div>
+      <div class="menu-item">
+        <img src=Avocado-Caesar-Salad-FI.jpg alt="Salad">
+        <h3>Caesar Salad</h3>
+        <p>₹200</p>
+      </div>
+      <div class="menu-item">
+        <img src=coffe.jpg alt="Cold Coffee">
+        <h3>Iced Coffee</h3>
+        <p>₹150</p>
+      </div>
+      <div class="menu-item">
+        <img src=ckae.jpg alt="Dessert">
+        <h3>Chocolate Cake</h3>
+        <p>₹180</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book a Table & Order Food</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="number" id="people" placeholder="No. of People" required>
+      <input type="datetime-local" id="date" required>
+      <select id="order" required>
+        <option value="">Select Food Item</option>
+        <option>Margherita Pizza</option>
+        <option>Cheese Burger</option>
+        <option>Italian Pasta</option>
+        <option>Caesar Salad</option>
+        <option>Iced Coffee</option>
+        <option>Chocolate Cake</option>
+      </select>
+      <button type="submit">Book & Order</button>
+      <p class="success-message" id="successMsg">✅ Your table is booked successfully!</p>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@TasteBiteRestaurant.com</p>
+    <p>Phone: +91 9****0****</p>
+    <p>Address: MG Road, New Delhi, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 TasteBite Restaurant | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let order = document.getElementById("order").value;
+      let msg = document.getElementById("successMsg");
+      msg.innerText = "Thank you " + name + "! Your table is booked and your order for " + order + " is confirmed ✅";
+      msg.style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
